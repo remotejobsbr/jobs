@@ -8,7 +8,12 @@ import {
 
 const initialState = {
   frontend: {
-    frontendbr: undefined
+    frontendbr: undefined,
+    reactbrasil: undefined
+  },
+  backend: {
+    backendbr: undefined,
+    soujava: undefined
   }
 }
 

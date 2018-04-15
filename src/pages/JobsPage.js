@@ -4,6 +4,18 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import {
+  List,
+  ListItem,
+  Divider,
+  Subheader,
+  Avatar
+} from 'material-ui'
+
+import { blue500 } from 'material-ui/styles/colors'
+
+import AssignmentIcon from '@material-ui/icons/Assignment'
+
 import { fetchJobs } from '../store/jobs/actions'
 
 class JobsPage extends Component {
@@ -25,22 +37,34 @@ class JobsPage extends Component {
 
   render = () => (
     <div>
-      {this.jobs && this.jobs.map(job => (
-        <p key={job.id}>
+      <List>
+        {this.jobs && this.jobs.map(job => (
           <Link
             to={`/jobs/${this.params.type}/${this.params.jobServiceName}/${job.id}`}
+            key={job.id}
           >
-            {job.title}
+            <ListItem
+              leftAvatar={<Avatar icon={<AssignmentIcon />} />}
+              primaryText={job.title}
+              secondaryText='Vagas do Repositório'
+            />
           </Link>
-        </p>
-      ))}
+        ))}
+      </List>
+
+      {!this.jobs && (
+        <div>
+          Carregando...
+        </div>
+      )}
     </div>
   )
 }
 
 JobsPage.propTypes = {
   fetchJobs: PropTypes.func.isRequired,
-  jobs: PropTypes.object
+  jobs: PropTypes.object,
+  match: PropTypes.object
 }
 
 JobsPage.defaultProps = {

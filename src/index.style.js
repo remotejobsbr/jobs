@@ -3,16 +3,34 @@ import { injectGlobal } from 'emotion'
 
 injectGlobal`
   ${emotionNormalize}
-  @font-face {
-    font-family: 'Patrick Hand SC';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Patrick Hand SC'),
-      local('PatrickHandSC-Regular'),
-      url(https://fonts.gstatic.com/s/patrickhandsc/v4/OYFWCgfCR-7uHIovjUZXsZ71Uis0Qeb9Gqo8IZV7ckE.woff2)
-        format('woff2');
-    unicode-range: U+0100-024f, U+1-1eff,
-      U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f,
-      U+A720-A7FF;
+`
+
+injectGlobal`
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+  }
+
+  .fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
   }
 `

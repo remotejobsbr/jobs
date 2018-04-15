@@ -36,6 +36,8 @@ class jobDetailPage extends Component {
     return jobs.find(job => job.id === Number(jobId)) || false
   }
 
+  removeComments = (text) => text.replace(/<!--(.|\n|\t|\r)*?-->/gi, '')
+
   render = () => (
     <div>
       {this.isFetched && (
@@ -43,10 +45,18 @@ class jobDetailPage extends Component {
           <h1>{this.job.title}</h1>
           <div>
             <ReactMarkdown
-              source={this.job.body}
+              source={this.removeComments(this.job.body)}
             />
           </div>
+
+          <div>
+            Em caso de dúvidas, entre <a href={this.job.html_url}>diretamente no link da vaga</a>
+          </div>
         </div>
+      )}
+
+      {this.isFetched && this.job === false && (
+        <div>Não há Trabalho aberto neste link</div>
       )}
     </div>
   )

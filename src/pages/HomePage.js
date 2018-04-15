@@ -1,43 +1,56 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import { fetchJobs } from '../store/jobs/actions'
+import {
+  List,
+  ListItem,
+  Divider,
+  Subheader,
+  Avatar
+} from 'material-ui'
 
-class HomePage extends Component {
-  componentDidMount = () => {
-    this.props.fetchJobs('frontendbr')
-  }
+import FolderIcon from '@material-ui/icons/Folder'
 
-  render = () => (
-    <div>
-      {this.props.frontendbr && this.props.frontendbr.map(job => (
-        <p key={job.id}>{job.title}</p>
-      ))}
-    </div>
-  )
-}
+const HomePage = () => (
+  <div>
+    <h1>Remote Job BR</h1>
 
-HomePage.propTypes = {
-  fetchJobs: PropTypes.func.isRequired,
-  frontendbr: PropTypes.array.isRequired
-}
+    <List>
+      <Subheader inset>Vagas de Front-End</Subheader>
+      <Link to='/jobs/frontend/frontendbr'>
+        <ListItem
+          leftAvatar={<Avatar icon={<FolderIcon />} />}
+          primaryText='Front-End Brasil'
+          secondaryText='Vagas do Repositório'
+        />
+      </Link>
+      <Link to='/jobs/frontend/reactbrasil'>
+        <ListItem
+          leftAvatar={<Avatar icon={<FolderIcon />} />}
+          primaryText='React Brasil'
+          secondaryText='Vagas do Repositório'
+        />
+      </Link>
 
-HomePage.defaultProps = {
-  frontendbr: PropTypes.array.isRequired
-}
+      <Divider />
 
-const mapStateToProps = state => ({
-  frontendbr: state.jobs.frontEnd.frontendbr
-})
+      <Subheader inset>Vagas de Back-End</Subheader>
+      <Link to='/jobs/backend/backendbr'>
+        <ListItem
+          leftAvatar={<Avatar icon={<FolderIcon />} />}
+          primaryText='Backend-End Brasil'
+          secondaryText='Vagas do Repositório'
+        />
+      </Link>
+      <Link to='/jobs/backend/soujava'>
+        <ListItem
+          leftAvatar={<Avatar icon={<FolderIcon />} />}
+          primaryText='SouJava'
+          secondaryText='Vagas do Repositório'
+        />
+      </Link>
+    </List>
+  </div>
+)
 
-const mapDispatchToPros = dispatch =>
-  bindActionCreators(
-    {
-      fetchJobs
-    },
-    dispatch
-  )
-
-export default connect(mapStateToProps, mapDispatchToPros)(HomePage)
+export default HomePage
