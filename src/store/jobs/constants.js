@@ -1,0 +1,3 @@
+export const FETCH_JOBS = 'jobs:FETCH_JOBS'
+export const FETCH_JOBS_SUCCESSFUL = 'jobs:FETCH_JOBS_SUCCESSFUL'
+export const FETCH_JOBS_FAILURE = 'jobs:FETCH_JOBS_FAILURE'

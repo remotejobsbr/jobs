@@ -1,0 +1,123 @@
+{
+  "name": "remote-job-br",
+  "version": "1.0.0",
+  "description": "This is a boilerplate for react and redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack-dev-server --config ./config/webpack.config.dev.js  --hot --open --colors",
+    "build": "webpack --config ./config/webpack.config.prod.js --progress --profile --colors",
+    "build:production": "cross-env SERVER_ENV=production npm run build",
+    "build:staging": "cross-env SERVER_ENV=staging npm run build",
+    "build:analyzer": "cross-env BUNDLE_ANALYZER=true npm run build",
+    "lint": "eslint src",
+    "format": "prettier-standard 'src/**/*.js'",
+    "precommit": "npm test",
+    "prepush": "npm run lint && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codetetris/react-redux-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "js"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codetetris/react-redux-boilerplate/issues"
+  },
+  "homepage": "https://github.com/codetetris/react-redux-boilerplate#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
+    "babel-loader": "^7.1.3",
+    "babel-plugin-emotion": "^9.0.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "clean-webpack-plugin": "^0.1.18",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.10",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.18.2",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.0.4",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "jest-css-modules": "^1.1.0",
+    "node-sass": "^4.7.2",
+    "prettier": "1.11.1",
+    "prettier-standard": "^8.0.0",
+    "react-hot-loader": "^4.0.0",
+    "redux-mock-store": "^1.5.1",
+    "sass-loader": "^6.0.7",
+    "standard-loader": "^6.0.1",
+    "style-loader": "^0.20.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.1.1",
+    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "btoa": "^1.1.2",
+    "emotion": "^9.0.2",
+    "emotion-normalize": "^7.0.1",
+    "lodash": "^4.17.5",
+    "normalize.scss": "^0.1.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-emotion": "^9.0.2",
+    "react-markdown": "^3.3.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-form": "^7.3.0",
+    "redux-saga": "^0.16.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.(css|scss|less)$": "jest-css-modules"
+    },
+    "globals": {
+      "NODE_ENV": "test"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "setupFiles": [
+      "./config/jest.config.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest.filemock.js",
+      "\\.(css)$": "<rootDir>/config/jest.styleMock.js"
+    },
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/"
+    ]
+  }
+}
