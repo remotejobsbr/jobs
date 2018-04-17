@@ -1,54 +1,38 @@
 import * as actions from '../actions'
 
 describe('auth actions', () => {
-  describe('signIn', () => {
+  describe('fetchJobs', () => {
     it('Should return the expected value', () => {
       const expected = {
-        type: 'auth:SIGN_IN',
-        payload: {
-          email: 'mock',
-          password: 'mock'
-        }
+        type: 'jobs:FETCH_JOBS',
+        payload: 'config'
       }
 
       expect(
-        actions.signIn({
-          email: 'mock',
-          password: 'mock'
-        })
+        actions.fetchJobs('config')
       ).toEqual(expected)
     })
   })
 
-  describe('signInSuccessful', () => {
+  describe('fetchJobsSuccessful', () => {
     it('Should return the expected value', () => {
       const expected = {
-        type: 'auth:SIGN_IN_SUCCESSFUL',
-        payload: 'mockUser'
+        type: 'jobs:FETCH_JOBS_SUCCESSFUL',
+        payload: { jobConfig: 'config', jobs: 'jobs' }
       }
 
-      expect(actions.signInSuccessful('mockUser')).toEqual(expected)
+      expect(actions.fetchJobsSuccessful(expected.payload)).toEqual(expected)
     })
   })
 
-  describe('signInFailure', () => {
+  describe('fetchJobsFailure', () => {
     it('Should return the expected value', () => {
       const expected = {
-        type: 'auth:SIGN_IN_FAILURE',
-        payload: 'mockError'
+        type: 'jobs:FETCH_JOBS_FAILURE',
+        payload: { jobConfig: 'config', error: 'jobs' }
       }
 
-      expect(actions.signInFailure('mockError')).toEqual(expected)
-    })
-  })
-
-  describe('logout', () => {
-    it('Should return the expected value', () => {
-      const expected = {
-        type: 'auth:LOGOUT'
-      }
-
-      expect(actions.logout()).toEqual(expected)
+      expect(actions.fetchJobsFailure(expected.payload)).toEqual(expected)
     })
   })
 })
