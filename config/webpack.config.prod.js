@@ -17,6 +17,10 @@ const config = {
       .filter(pckg => pckg !== 'normalize.scss')
   },
 
+  output: {
+    publicPath: '/jobs'
+  },
+
   module: {
     ...baseConfig.module,
     rules: [
