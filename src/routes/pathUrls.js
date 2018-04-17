@@ -9,7 +9,8 @@ const services = 'frontendbr|reactbrasil|backendbr|soujava'
 export const publicRoutes = [
   {
     path: '/',
-    component: Home
+    component: Home,
+    template: AppTemplate
   },
   {
     path: `/jobs/:type(${types})/:jobServiceName(${services})`,
@@ -19,4 +20,4 @@ export const publicRoutes = [
     path: `/jobs/:type(${types})/:jobServiceName(${services})/:jobId`,
     component: JobDetail
   }
-].map(route => ({ ...route, template: AppTemplate }))
+]

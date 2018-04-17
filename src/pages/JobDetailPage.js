@@ -5,7 +5,12 @@ import { connect } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 
 import { fetchJobs } from '../store/jobs/actions'
-
+import BackAppbar from '../components/appbar/BackAppbar'
+import {
+  jobTitle,
+  contentContainer,
+  jobNotice
+} from './styles/JobDetailPage.style'
 class jobDetailPage extends Component {
   componentDidMount = () => {
     const {
@@ -14,6 +19,10 @@ class jobDetailPage extends Component {
     } = this.props.match.params
 
     this.props.fetchJobs({ type, jobServiceName })
+  }
+
+  get params () {
+    return this.props.match.params
   }
 
   get isFetched () {
@@ -40,16 +49,18 @@ class jobDetailPage extends Component {
 
   render = () => (
     <div>
+      <BackAppbar to={`/jobs/${this.params.type}/${this.params.jobServiceName}`} />
+
       {this.isFetched && (
-        <div>
-          <h1>{this.job.title}</h1>
+        <div className={contentContainer}>
+          <h1 className={jobTitle}>{this.job.title}</h1>
           <div>
             <ReactMarkdown
               source={this.removeComments(this.job.body)}
             />
           </div>
 
-          <div>
+          <div className={jobNotice}>
             Em caso de dúvidas, entre <a href={this.job.html_url}>diretamente no link da vaga</a>
           </div>
         </div>

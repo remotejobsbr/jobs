@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Switch, Route, withRouter } from 'react-router-dom'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import { publicRoutes } from './pathUrls'
 import RouteWithTemplate from './RouteWithTemplate'
@@ -20,14 +19,10 @@ const Routes = ({ location }) => {
   ]
 
   return (
-    <TransitionGroup>
-      <CSSTransition key={location.key} classNames='fade' timeout={800}>
-        <Switch>
-          {routes}
-          <Route component={NotFoundPage} />
-        </Switch>
-      </CSSTransition>
-    </TransitionGroup>
+    <Switch>
+      {routes}
+      <Route component={NotFoundPage} />
+    </Switch>
   )
 }
 

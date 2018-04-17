@@ -7,16 +7,17 @@ import { Link } from 'react-router-dom'
 import {
   List,
   ListItem,
-  Divider,
   Subheader,
   Avatar
 } from 'material-ui'
 
 import { blue500 } from 'material-ui/styles/colors'
-
 import AssignmentIcon from '@material-ui/icons/Assignment'
 
 import { fetchJobs } from '../store/jobs/actions'
+
+import BackAppbar from '../components/appbar/BackAppbar'
+import moment from '../utils/momentLocale'
 
 class JobsPage extends Component {
   componentDidMount = () => {
@@ -36,17 +37,19 @@ class JobsPage extends Component {
   }
 
   render = () => (
-    <div>
+    <div style={{ background: '#FFF' }}>
+      <BackAppbar to='/' />
       <List>
+        <Subheader inset>Vagas</Subheader>
         {this.jobs && this.jobs.map(job => (
           <Link
             to={`/jobs/${this.params.type}/${this.params.jobServiceName}/${job.id}`}
             key={job.id}
           >
             <ListItem
-              leftAvatar={<Avatar icon={<AssignmentIcon />} />}
+              leftAvatar={<Avatar icon={<AssignmentIcon />} backgroundColor={blue500} />}
               primaryText={job.title}
-              secondaryText='Vagas do Repositório'
+              secondaryText={`Vaga criada ${moment(job.created_at).fromNow()}`}
             />
           </Link>
         ))}

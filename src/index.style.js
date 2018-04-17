@@ -6,8 +6,13 @@ injectGlobal`
 `
 
 injectGlobal`
+  a {
+    color: rgb(0, 188, 212);
+  }
+
   * {
     font-family: 'Roboto', sans-serif;
+    color: #444;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -22,15 +27,5 @@ injectGlobal`
     max-width: 100%;
     max-height: 500px;
     object-fit: cover;
-  }
-
-  .fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 250ms ease-in;
   }
 `

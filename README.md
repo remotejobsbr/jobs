@@ -1,10 +1,10 @@
 # Remote Jobs
 
-Remote Jobs é um PWA que agrega as vagas remotas na área de TI de diversos repositórios de vagas. A ideia é formentar a cultura de trabalho remoto no Brasil, aumentando a quantidade de empresas que atuem nesta modalidade. Se sua empresa quer ter os melhores da sua cidade, contrate alocado, se quer ter **os melhores**, abra a mente para a contratação remota.
+Remote Jobs é um PWA que agrega as vagas remotas na área de TI de diversos repositórios de vagas no Github. A ideia é formentar a cultura de trabalho remoto no Brasil, aumentando a quantidade de empresas que atuem e profissionais que trabalhem nesta modalidade. Se sua empresa quer ter os melhores da sua cidade, contrate alocado, se quer ter **os melhores**, abra a mente para a contratação remota.
 
 As issues no github são excepcionais para cadastrar vagas de trabalho e existem repositórios excelentes e que funcionam muito bem, como o do [frontendbr](https://github.com/frontendbr/vagas/issues). Este projeto visa juntar o máximo de repositórios de vagas em um lugar, montando um feed que unifica vagas e que oferece redirecionamento do candidato à essas vagas. Tudo isso 100% open source e grátis.
 
-## Getting Started
+## Iniciando
 
 Para usar: Acesse o [Remote Jobs](//xablau.com)
 

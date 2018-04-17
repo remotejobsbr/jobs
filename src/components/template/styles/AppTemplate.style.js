@@ -2,9 +2,6 @@ import styled from 'react-emotion'
 
 export const Container = styled('div')`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
   box-sizing: border-box;
   overflow: hidden;

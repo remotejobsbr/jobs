@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import {
   BottomNavigation,
@@ -15,27 +15,25 @@ import {
   BottomContainer
 } from './styles/AppTemplate.style'
 
-const AppTemplate = ({ children }) => (
+const AppTemplate = ({ children, history }) => (
   <Container>
     <ChildrenContainer>
       {children}
     </ChildrenContainer>
 
     <BottomContainer>
-      <BottomNavigation>
-        <Link to='/'>
-          <BottomNavigationItem
-            label='Recents'
-            icon={<Work />}
-          />
-        </Link>
+      <BottomNavigation selectedIndex={0}>
+        <BottomNavigationItem
+          label='Vagas'
+          icon={<Work />}
+          onClick={() => history.push('/')}
+        />
 
-        <Link to='/'>
-          <BottomNavigationItem
-            label='Favorites'
-            icon={<Favorite />}
-          />
-        </Link>
+        <BottomNavigationItem
+          label='Meus Favoritos'
+          icon={<Favorite />}
+          onClick={() => history.push('/')}
+        />
       </BottomNavigation>
     </BottomContainer>
   </Container>
@@ -46,7 +44,8 @@ AppTemplate.propTypes = {
     PropTypes.element,
     PropTypes.func,
     PropTypes.array
-  ]).isRequired
+  ]).isRequired,
+  history: PropTypes.object.isRequired
 }
 
-export default AppTemplate
+export default withRouter(AppTemplate)
