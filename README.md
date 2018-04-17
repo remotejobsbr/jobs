@@ -1,8 +1,21 @@
 # Remote Jobs
 
-Remote Jobs é um PWA que agrega as vagas remotas na área de TI de diversos repositórios de vagas no Github. A ideia é formentar a cultura de trabalho remoto no Brasil, aumentando a quantidade de empresas que atuem e profissionais que trabalhem nesta modalidade. Se sua empresa quer ter os melhores da sua cidade, contrate alocado, se quer ter **os melhores**, abra a mente para a contratação remota.
+Remote Jobs é um PWA que agrega as vagas remotas na área de TI de diversos repositórios de vagas no Github. A ideia é formentar a cultura do **trabalho remoto** no Brasil, aumentando a quantidade de empresas que atuem e profissionais que trabalhem nesta modalidade. Se sua empresa quer ter os melhores da sua cidade, contrate alocado, se quer ter **os melhores**, abra a mente para a contratação remota.
 
 As issues no github são excepcionais para cadastrar vagas de trabalho e existem repositórios excelentes e que funcionam muito bem, como o do [Front-End Brasil](https://github.com/frontendbr/vagas/issues). Este projeto visa juntar o máximo de repositórios de vagas em um lugar, montando um feed que unifica vagas e que oferece redirecionamento do candidato à essas vagas. Tudo isso 100% open source e grátis.
+
+## Agregando o excelente trabalho da comunidade!
+
+O objetivo principal do Remote Job Br não é ser mais um repositórios de vagas no Github. Visamos contruir uma aplicação web exatamente pra agregar todo trabalho e informação gerados nestes repositórios. Temos também o objetivo de divulgar mais o uso de repositórios do Github para anúncios de vagas.
+
+Para vagas de desenvolvimento, recomendamos estes dois repositórios:
+
+- [Front-End Brasil](https://github.com/frontendbr/vagas)
+- [Back-End Brasil](https://github.com/backend-br/vagas)
+
+Estamos iniciando repositórios para **vagas remotas** na área de Design e UX:
+
+- [Remote Job Br - Design/Ux Vagas](https://github.com/remotejobbr/design-ux-vagas)
 
 ## Iniciando
 
