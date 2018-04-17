@@ -6,14 +6,13 @@
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --config ./config/webpack.config.dev.js  --hot --open --colors",
-    "build": "webpack --config ./config/webpack.config.prod.js --progress --profile --colors",
-    "build:production": "cross-env SERVER_ENV=production npm run build",
-    "build:staging": "cross-env SERVER_ENV=staging npm run build",
+    "build": "webpack --config ./config/webpack.config.prod.js --progress --profile --colors && cp src/404.html dist/404.html",
     "build:analyzer": "cross-env BUNDLE_ANALYZER=true npm run build",
     "lint": "eslint src",
     "format": "prettier-standard 'src/**/*.js'",
     "precommit": "npm test",
-    "prepush": "npm run lint && npm test"
+    "prepush": "npm run lint && npm test",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -55,6 +54,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
+    "gh-pages": "^1.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.4",
     "husky": "^0.14.3",
