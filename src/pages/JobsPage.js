@@ -17,7 +17,12 @@ import AssignmentIcon from '@material-ui/icons/Assignment'
 import { fetchJobs } from '../store/jobs/actions'
 
 import BackAppbar from '../components/appbar/BackAppbar'
+import WidthContainer from '../components/container/WidthContainer'
 import moment from '../utils/momentLocale'
+
+import {
+  container
+} from './styles/JobsPage.style'
 
 class JobsPage extends Component {
   componentDidMount = () => {
@@ -37,29 +42,25 @@ class JobsPage extends Component {
   }
 
   render = () => (
-    <div style={{ background: '#FFF' }}>
+    <div className={container}>
       <BackAppbar to='/' />
-      <List>
-        <Subheader inset>Vagas</Subheader>
-        {this.jobs && this.jobs.map(job => (
-          <Link
-            to={`/jobs/${this.params.type}/${this.params.jobServiceName}/${job.id}`}
-            key={job.id}
-          >
-            <ListItem
-              leftAvatar={<Avatar icon={<AssignmentIcon />} backgroundColor={blue500} />}
-              primaryText={job.title}
-              secondaryText={`Vaga criada ${moment(job.created_at).fromNow()}`}
-            />
-          </Link>
-        ))}
-      </List>
-
-      {!this.jobs && (
-        <div>
-          Carregando...
-        </div>
-      )}
+      <WidthContainer>
+        <List>
+          <Subheader inset>Vagas</Subheader>
+          {this.jobs && this.jobs.map(job => (
+            <Link
+              to={`/jobs/${this.params.type}/${this.params.jobServiceName}/${job.id}`}
+              key={job.id}
+            >
+              <ListItem
+                leftAvatar={<Avatar icon={<AssignmentIcon />} backgroundColor={blue500} />}
+                primaryText={job.title}
+                secondaryText={`Vaga criada ${moment(job.created_at).fromNow()}`}
+              />
+            </Link>
+          ))}
+        </List>
+      </WidthContainer>
     </div>
   )
 }

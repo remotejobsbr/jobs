@@ -6,10 +6,12 @@ import ReactMarkdown from 'react-markdown'
 
 import { fetchJobs } from '../store/jobs/actions'
 import BackAppbar from '../components/appbar/BackAppbar'
+import WidthContainer from '../components/container/WidthContainer'
 import {
   jobTitle,
   contentContainer,
-  jobNotice
+  jobNotice,
+  container
 } from './styles/JobDetailPage.style'
 class jobDetailPage extends Component {
   componentDidMount = () => {
@@ -48,27 +50,29 @@ class jobDetailPage extends Component {
   removeComments = (text) => text.replace(/<!--(.|\n|\t|\r)*?-->/gi, '')
 
   render = () => (
-    <div>
+    <div className={container}>
       <BackAppbar to={`/jobs/${this.params.type}/${this.params.jobServiceName}`} />
 
-      {this.isFetched && (
-        <div className={contentContainer}>
-          <h1 className={jobTitle}>{this.job.title}</h1>
-          <div>
-            <ReactMarkdown
-              source={this.removeComments(this.job.body)}
-            />
-          </div>
+      <WidthContainer>
+        {this.isFetched && (
+          <div className={contentContainer}>
+            <h1 className={jobTitle}>{this.job.title}</h1>
+            <div>
+              <ReactMarkdown
+                source={this.removeComments(this.job.body)}
+              />
+            </div>
 
-          <div className={jobNotice}>
+            <div className={jobNotice}>
             Em caso de dúvidas, entre <a href={this.job.html_url}>diretamente no link da vaga</a>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {this.isFetched && this.job === false && (
-        <div>Não há Trabalho aberto neste link</div>
-      )}
+        {this.isFetched && this.job === false && (
+          <div>Não há Trabalho aberto neste link</div>
+        )}
+      </WidthContainer>
     </div>
   )
 }
