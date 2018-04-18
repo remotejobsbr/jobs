@@ -9,16 +9,16 @@ import {
   Avatar
 } from 'material-ui'
 
-import { blue500, orange500 } from 'material-ui/styles/colors'
+import { blue500, orange500, pink500 } from 'material-ui/styles/colors'
 import FolderIcon from '@material-ui/icons/Folder'
 
 import WidthContainer from '../components/container/WidthContainer'
 
-import { title, container } from './styles/HomePage.style'
+import { title } from './styles/HomePage.style'
 
 const HomePage = () => (
-  <div className={container}>
-    <h1 className={title}>Remote Job BR</h1>
+  <div>
+    <h1 className={title}>Remote Job Br</h1>
     <WidthContainer>
       <List>
         <Subheader inset>Vagas de Front-End</Subheader>
@@ -51,6 +51,31 @@ const HomePage = () => (
           <ListItem
             leftAvatar={<Avatar icon={<FolderIcon />} backgroundColor={orange500} />}
             primaryText='SouJava'
+            secondaryText='Vagas do Repositório'
+          />
+        </Link>
+        <Link to='/jobs/backend/phpdevbrasil'>
+          <ListItem
+            leftAvatar={<Avatar icon={<FolderIcon />} backgroundColor={orange500} />}
+            primaryText='PHP Dev Brasil'
+            secondaryText='Vagas do Repositório'
+          />
+        </Link>
+
+        <Divider />
+
+        <Subheader inset>Vagas Mobile</Subheader>
+        <Link to='/jobs/mobile/androiddevbr'>
+          <ListItem
+            leftAvatar={<Avatar icon={<FolderIcon />} backgroundColor={pink500} />}
+            primaryText='Android Dev BR'
+            secondaryText='Vagas do Repositório'
+          />
+        </Link>
+        <Link to='/jobs/mobile/cocoaheadsbrasil'>
+          <ListItem
+            leftAvatar={<Avatar icon={<FolderIcon />} backgroundColor={pink500} />}
+            primaryText='CocoaHeads Brasil (IOS)'
             secondaryText='Vagas do Repositório'
           />
         </Link>

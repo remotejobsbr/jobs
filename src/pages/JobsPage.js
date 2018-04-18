@@ -20,10 +20,6 @@ import BackAppbar from '../components/appbar/BackAppbar'
 import WidthContainer from '../components/container/WidthContainer'
 import moment from '../utils/momentLocale'
 
-import {
-  container
-} from './styles/JobsPage.style'
-
 class JobsPage extends Component {
   componentDidMount = () => {
     const { type, jobServiceName } = this.params
@@ -42,7 +38,7 @@ class JobsPage extends Component {
   }
 
   render = () => (
-    <div className={container}>
+    <div>
       <BackAppbar to='/' />
       <WidthContainer>
         <List>
