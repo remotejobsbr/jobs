@@ -10,7 +10,8 @@ import WidthContainer from '../components/container/WidthContainer'
 import {
   jobTitle,
   contentContainer,
-  jobNotice
+  jobNotice,
+  container
 } from './styles/JobDetailPage.style'
 class jobDetailPage extends Component {
   componentDidMount = () => {
@@ -49,7 +50,7 @@ class jobDetailPage extends Component {
   removeComments = (text) => text.replace(/<!--(.|\n|\t|\r)*?-->/gi, '')
 
   render = () => (
-    <div>
+    <div className={container}>
       <BackAppbar to={`/jobs/${this.params.type}/${this.params.jobServiceName}`} />
 
       <WidthContainer>

@@ -1,5 +1,12 @@
 import { css } from 'emotion'
 
+export const container = css`
+  background: rgba(65, 98, 103, 0.2);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`
+
 export const title = css`
   text-align: center;
   font-weight: lighter;
