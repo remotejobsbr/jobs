@@ -10,10 +10,9 @@ export const container = css`
 export const title = css`
   text-align: center;
   font-weight: lighter;
-  background-color: rgb(0, 188, 212);
+  background: #00BCD4;
+  background: linear-gradient(to right, #00BCD4, #31d4d4);
   margin: 0;
   padding: 1.5em .5em;
-  color: #F1F1F1;
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  color: #FFF;
 `

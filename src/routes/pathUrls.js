@@ -3,8 +3,8 @@ import Jobs from '../pages/JobsPage'
 import JobDetail from '../pages/JobDetailPage'
 import AppTemplate from '../components/template/AppTemplate'
 
-const types = 'frontend|backend'
-const services = 'frontendbr|reactbrasil|backendbr|soujava'
+const types = 'frontend|backend|mobile'
+const services = 'frontendbr|reactbrasil|backendbr|soujava|androiddevbr|cocoaheadsbrasil|phpdevbrasil'
 
 export const publicRoutes = [
   {

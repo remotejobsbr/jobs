@@ -22,5 +22,5 @@ export const BottomContainer = styled('div')`
   position: fixed;
   width: 100%;
   bottom: 0;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 `

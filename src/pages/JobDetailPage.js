@@ -59,6 +59,7 @@ class jobDetailPage extends Component {
             <h1 className={jobTitle}>{this.job.title}</h1>
             <div>
               <ReactMarkdown
+                escapeHtml={false}
                 source={this.removeComments(this.job.body)}
               />
             </div>

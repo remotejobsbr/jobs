@@ -14,6 +14,10 @@ const initialState = {
   backend: {
     backendbr: undefined,
     soujava: undefined
+  },
+  mobile: {
+    androiddevbr: undefined,
+    cocoaheadsbrasil: undefined
   }
 }
 

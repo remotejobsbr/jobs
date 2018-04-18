@@ -1,10 +1,5 @@
 import { css } from 'emotion'
 
-export const container = css`
-  background: rgba(65, 98, 103, 0.2);
-  min-height: 100vh;
-`
-
 export const jobTitle = css`
   text-align: center;
   margin-top: -0.5em;
